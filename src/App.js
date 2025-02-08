@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <Motivation message={motivationalMessage} />
+      {/* <Motivation message={motivationalMessage} /> */}
       <AddTask addTask={addTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} completeTask={completeTask} />
       <Achievements tasks={tasks} />
