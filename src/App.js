@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
-// import Motivation from './components/Motivation';
 import Achievements from './components/Achievements';
+import Motivation from './components/Motivation';
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
-  const [motivationalMessage, setMotivationalMessage] = useState('');
+  const [motivationalMessage, setMotivationalMessage] = useState("");
 
   const motivationalQuotes = [
     "Believe in yourself and all that you are!",
@@ -21,9 +21,11 @@ function App() {
   ];
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
-    setMotivationalMessage(motivationalQuotes[randomIndex]);
-  }, []);
+    if (motivationalQuotes && motivationalQuotes.length > 0) {
+      const randomIndex = Math.floor(Math.random() * motivationalQuotes.length);
+      setMotivationalMessage(motivationalQuotes[randomIndex]);
+    }
+  }, [motivationalQuotes]);
 
   const addTask = (task) => {
     const newTasks = [...tasks, task];
@@ -48,12 +50,13 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      {/* <Motivation message={motivationalMessage} /> */}
+      <Motivation message={motivationalMessage} />
       <AddTask addTask={addTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} completeTask={completeTask} />
       <Achievements tasks={tasks} />
     </div>
   );
 }
+
 
 export default App;
