@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
-import Motivation from './components/Motivation';
+// import Motivation from './components/Motivation';
 import Achievements from './components/Achievements';
 import './App.css';
 
