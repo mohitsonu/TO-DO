@@ -135,3 +135,37 @@ body {
 .delete-button:hover {
   background: #c0392b;
 }
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .app-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .add-task {
+    flex-direction: column;
+  }
+
+  .add-task input,
+  .add-task select {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-item span {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .complete-button,
+  .delete-button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
