@@ -85,29 +85,30 @@ body {
   border: 1px solid #d1d8e0;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
 }
 
 .task-item span {
   font-size: 16px;
   font-weight: 500;
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
 }
 
-.complete-button {
+.complete-button,
+.delete-button {
   background: #2ecc71;
   color: white;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .delete-button {
   background: #e74c3c;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 /* Achievements Section */
@@ -154,18 +155,18 @@ body {
   }
 
   .task-item {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .task-item span {
-    margin-bottom: 10px;
-    text-align: center;
+    margin-bottom: 0;
+    text-align: left;
   }
 
   .complete-button,
   .delete-button {
-    width: 100%;
-    margin-bottom: 5px;
+    width: auto;
+    margin-bottom: 0;
   }
 }
